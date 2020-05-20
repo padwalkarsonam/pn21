@@ -4,7 +4,7 @@ const ejs =require('ejs')
 const app =express()
 
 
-PORT = 3000||process.env.PORT
+PORT = process.env.PORT||3000;
 
 const directorypath = path.join(__dirname,'../public')
 console.log(directorypath)
