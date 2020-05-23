@@ -1,5 +1,6 @@
-@media only screen and(max-width:768px)
-{
+@media only screen and (max-width: 768px)  {
+   
+   
     header .navbar-brand
     {
         padding-left: 1rem;
@@ -12,7 +13,7 @@
     }
     .section-2 .cover
     {
-        background-position: -25vmin --10vmin;
+        background-position: -25vmin -10vmin;
 
     }
     .numbers .rect{
@@ -37,10 +38,40 @@
         text-align: center !important;
 
     }
+    .section-3 .desktop 
+    {
+        
+        margin: .5vmin;
+    }
+   
     .section-3 .desktop i
     {
         
         font-size: 8vmin;
     }
 
+    .section-4 .team
+    {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+}
+
+
+@media only screen and (max-width: 425px)
+{
+   footer .row .col-md-2
+   {
+       margin-top: 8vmin;
+   }
+}
+
+@media only screen and (max-width: 320px)
+{
+   footer .row .col-md-2
+   {
+       margin-top: 8vmin;
+   }
 }

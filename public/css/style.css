@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&family=Patua+One&family=Rubik:wght@300&family=Sniglet&display=swap');
 
 
+
 *{
     box-sizing: border-box;
 }
@@ -48,9 +49,14 @@ header .navbar-brand
 {
     padding-left: 8rem;
 }
-header .nav-links:hover
+header .nav-link:hover
 {
-    color: black;
+    color: black !important;
+}
+
+header .navbar-nav:hover
+{
+    color: black !important;
 }
 header .row .col-md-5
 {
@@ -347,5 +353,18 @@ footer .column i+i
  .white
 { 
     color: whitesmoke;
+
+}
+
+/*Sticky class*/
+
+.sticky
+{
+   position: fixed !important;
+   top: 0;
+   width: 100%;
+   background:rgba(0, 0, 0, 0.815);
+   z-index:9999;
+   transition: all 1.5sec ease;
 
 }
