@@ -1,74 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <script src="https://kit.fontawesome.com/535ef03af2.js" crossorigin="anonymous"></script>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="../css/mobile-style.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
-   
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    
-    <title>PNSV</title>
-</head>
-
-<body>
-
-    <header >
-        <div class="container-fluid p-0">
-            <nav class="navbar navbar-expand-lg ">
-         
-                <a class="navbar-brand" href="#">       <i class="fa fa-mobile fa-2x mx-3"></i>PNSV</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                   <i class="fa fa-align-right text-light"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <div class="mr-auto"></div>
-                    <ul class="navbar-nav ">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Username
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Login</a>
-                                <a class="dropdown-item" href="#">Register</a>
-                                <a class="dropdown-item" href="#">Logout</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-        </div>
-
-
-
-   
-    <div class="container text-center ">
+<%- include("./partials/header.ejs") %>
+    <div class="container text-center " id="sec-1">
         <div class="row">
             <div class="col-md-7 col-sm-12">
-                <h6>Author daily</h6>
+                <h6>Blogs Daily</h6>
                 <h1>Exciting adventure</h1>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro quam nam cupiditate consequatur modi
-                    est laboriosam unde ratione eligendi! Quidem.
+                   Get knowledge about best financial practises to grow your wealth.
                 </p>
-                <button class="btn btn-light px-5 py-2">Buy for 5.99$</button>
+                <button class="btn btn-light px-5 py-2">Join Blogs</button>
 
 
             </div>
@@ -91,12 +30,10 @@
                         <div class="col-md-6">
                             <div class="panel text-left">
                                 <h1>
-                                    Mr.Devid Smith
+                                    Construction
                                 </h1>
                                 <p class="pt-4">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, quo doloribus quia
-                                    dolores debitis mollitia optio facilis necessitatibus? Nesciunt corrupti corporis
-                                    voluptatibus libero, magni aut aspernatur officiis quos obcaecati ad.
+                                    
                                 </p>
                                 <p>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis voluptatibus
@@ -110,7 +47,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section-2 container-fluid p-0">
+            <section class="section-2 container-fluid p-0" id="sec-2">
                 <div class="cover">
                     <div class="content text-center">
                         <h1>Some Features That made Us unique</h1>
@@ -151,7 +88,7 @@
                     </div>
 
                 </div>
-                <div class="purchase text-center">
+                <div class="purchase text-center" id="sec-3">
                     <h1>purchare Whatever You Want</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas maxime ea, dolores delectus
                         molestiae exercitationem aspernatur labore nobis consectetur, non perspiciatis! Ducimus quam
@@ -161,14 +98,12 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="title">
-                                            <h5 class="card-title">PDF</h5>
+                                            <h5 class="card-title">Stock Advisory</h5>
                                         </div>
-                                        <p class="card-text">very good product</p>
+                                        <p class="card-text">Get detailed analysis on stocks and market trends </p>
                                         <div class="pricing">
-                                            <h1>
-                                                $77.29
-                                            </h1>
-                                            <a class="btn btn-dark px-5 py-2 mb-5 "> <p class="price_text">Purchase Now</p> </a>
+                                            
+                                            <a class="btn btn-dark px-5 py-2 mb-5 " href="/info/stockadvisory"> <p class="price_text">Get Info</p> </a>
                                         </div>
                                       
                                     </div>
@@ -179,14 +114,12 @@
                                         <div class="card">
                                             <div class="card-body">
                                                 <div class="title">
-                                                    <h5 class="card-title">PDF</h5>
+                                                    <h5 class="card-title">Loans</h5>
                                                 </div>
-                                                <p class="card-text">This is good product </p>
+                                                <p class="card-text">Get details over loans and other loans related querries </p>
                                                 <div class="pricing">
-                                                    <h1>
-                                                        $77.29
-                                                    </h1>
-                                                    <a class="btn btn-dark px-5 py-2 mb-5"> <p class="price_text">Purchase Now</p></a>
+                                                   
+                                                    <a class="btn btn-dark px-5 py-2 mb-5" href="/info/loans"> <p class="price_text">Get Info</p></a>
                                                 </div>
             
                                             </div>
@@ -199,14 +132,12 @@
                                         <div class="card">
                                             <div class="card-body">
                                                 <div class="title">
-                                                    <h5 class="card-title">PDF</h5>
+                                                    <h5 class="card-title">Insurance</h5>
                                                 </div>
-                                                <p class="card-text">This is good product </p>
+                                                <p class="card-text">To know more about our insurance policy </p>
                                                 <div class="pricing">
-                                                    <h1>
-                                                        $77.29
-                                                    </h1>
-                                                    <a class="btn btn-dark px-5 py-2 mb-5"> <p class="price_text">Purchase Now</p></a>
+                                                   
+                                                    <a class="btn btn-dark px-5 py-2 mb-5" href="/info/Insurance"> <p class="price_text">Get Info</p></a>
                                                 </div>
             
                                             </div>
@@ -215,6 +146,42 @@
                                     </div>
                                 </div>
             
+            
+                            </div>
+                            <div class="d-flex flex-row justify-content-center flex-wrap">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="title">
+                                            <h5 class="card-title">Bussiness Planning</h5>
+                                        </div>
+                                        <p class="card-text">Get from experts detailed plannig and execution of your Bussiness</p>
+                                        <div class="pricing">
+                                            
+                                            <a class="btn btn-dark px-5 py-2 mb-5 " href="/info/BussinessPlanning" > <p class="price_text">Get Info</p> </a>
+                                        </div>
+                                      
+                                    </div>
+    
+                                </div>
+                                <div class="cards">
+                                    <div class="d-flex flex-row justify-content-center flex-wrap">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="title">
+                                                    <h5 class="card-title">Digital Marketing</h5>
+                                                </div>
+                                                <p class="card-text">Use our digital marketing platform to increase your reach </p>
+                                                <div class="pricing">
+                                                   
+                                                    <a class="btn btn-dark px-5 py-2 mb-5" href="/info/Digitalmarketing"> <p class="price_text">Get Info</p></a>
+                                                </div>
+            
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                </div>
+                              
             
                             </div>
                         </div>
@@ -305,75 +272,4 @@
             </div>
             </section>
         </main>
-        <footer>
-            <div class="conatiainer-fluid">
-                <div class="row text-left">
-                   <div class="col-md-5 col-md-5">
-                    <h1 class="text-light"></h1>
-                    <p class="text-muted">
-                        Lorem ipsum dolor sit amet.
-                    </p>
-                    <p class="pt-4 text-muted">
-                        copy @2020 All rights reserved 
-                        <span>PNSV </span>
-                    </p>
-                    
-                   </div> 
-                    <div class="col-md-5">
-                        <h4 class="text-light">
-                            Newsletter
-                        </h4>
-                        <form class="form-inline">
-                            <div class="col pl-">
-                                <div class="input-group pr-5">
-                                    <input type="text" class="form-control bg-dark text-white" placeholder="Email">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <i class="fa fa-arrow-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <p class="white">
-                            Stay Updated
-                        </p>
-                    </div>
-                    <div class="col-md-2">
-                        <h4 class="white">
-                            Follow Us
-                        </h4>
-                        <p class="text-muted">Let us be social</p>
-                        <div class="column">
-                            <i class="fa fa-facebook-f">
-
-                            </i>
-                            <i class="fa fa-instagram">
-
-                            </i>
-                            <i class="fa fa-twitter">
-
-                            </i>
-                            <i class="fa fa-youtube">
-
-                            </i>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            
-        </footer>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
-            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-            crossorigin="anonymous"></script>
-            <script src="../js/Stickynav.js"></script>
-        </body>
-
-</html>
+        <%- include("./partials/footer.ejs") %>
