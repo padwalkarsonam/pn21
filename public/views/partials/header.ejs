@@ -39,19 +39,45 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/#sec-3">Services</a>
                         </li>
-                        <li class="nav-item dropdown">
+
+                        <% if(!currentuser){ %>
+                        <li class="nav-item dropdown ">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Username
+                                Signup
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Login</a>
-                                <a class="dropdown-item" href="#">Register</a>
-                                <a class="dropdown-item" href="#">Logout</a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="/login">Login</a>
+                                <a class="dropdown-item" href="/Register">Register</a>
+                                
                             </div>
                         </li>
                     </ul>
+                    <% } else {%>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               <%=currentuser.username %>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="/logout">Logout</a>
+                                
+                            </div>
+                        </li>
+                    </ul>
+                  <%}%>
+                    
                 </div>
             </nav>
 
         </div>
+   
+        <div class="container text-center">
+            <%if(error&&error.length>0){%>
+              <div class="alert alert-danger" role="alert"><%=error%></div>
+            <%}%>
+            <%if(success&&success.length>0){%>
+              <div class="alert alert-success" role="alert"><%=success%></div>
+            <%}%>
+          </div>
+          

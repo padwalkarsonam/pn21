@@ -21,6 +21,16 @@ input[type=number], select, textarea {
     margin-bottom: 16px;
     resize: vertical;
   }
+  input[type=password], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
   input[type=email], select, textarea {
     width: 100%;
     padding: 12px;
@@ -45,7 +55,20 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
-.container {
+.formback {
+    
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding-left: 5vmin;
+  padding-right: 5vmin;
+  padding-bottom: 1vmin;
+    padding-top: 5vmin;
+}
+.jumbotron
+{
+    background-color: #f2f2f2;
+}
+/* .formback {
     
   border-radius: 5px;
   background-color: #f2f2f2;
@@ -53,8 +76,12 @@ input[type=submit]:hover {
   padding-right: 100px;
   padding-bottom: 100px;
     padding-top: 25px;
-}
+} */
 .container>h1{
     
    text-align: center;
+  }
+  @media only screen and (max-width: 768px) 
+   {
+     
   }

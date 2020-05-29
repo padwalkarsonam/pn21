@@ -7,7 +7,12 @@
 *{
     box-sizing: border-box;
 }
+/* here there was 
 header,section
+{
+    overflow-x: hidden;
+} */
+section
 {
     overflow-x: hidden;
 }
@@ -297,6 +302,7 @@ header .container .col-md-7 button:hover{
 }
 .section-4 .team
 {
+    
     padding: 1vmin 4vmin;
 }
 
