@@ -2,11 +2,15 @@ const express = require('express')
 const mongoose = require('mongoose')
 const blogs = require('../models/blogs')
 const flash = require('connect-flash')
+
+
 const isloggedin = require('../middleware/isloggedin')
+const isauthorised = require('../middleware/isauthorised')
+
 
 const router = express.Router()
-
-
+const methodOverride = require('method-override')
+router.use(methodOverride("_method"))
 router.use(flash())
 
 
@@ -61,7 +65,7 @@ router.post('/blogs',async (req,res)=>
     const blog = new blogs(value)
 
 
-    console.log(value)
+   
   
     try{
         await blog.save()
@@ -70,7 +74,7 @@ router.post('/blogs',async (req,res)=>
     catch(error)
     {
             req.flash('error',error.message)
-           console.log('error',error)
+           
     }
     res.redirect('/blogs')
    
@@ -82,7 +86,12 @@ router.get('/blogs/:id',async (req,res)=>
     try{
         const id =req.params.id
         const blog= await blogs.findById(id)
-        res.render('blogs/show_blog',{blog})
+        category=blog.category
+
+        const recent_blog = await blogs.find({}).limit(3).sort({'CreatedAT':-1})
+        
+        const related_blog =await blogs.find({category}).limit(2).sort({'CreatedAT':-1})
+        res.render('blogs/show_blog',{blog,recent_blog,related_blog})
     }
     catch(error)
     {
@@ -91,5 +100,51 @@ router.get('/blogs/:id',async (req,res)=>
 
     }
 })
+
+router.get('/blogs/:id/edit',isloggedin,isauthorised,async (req,res)=>
+{
+    const id =req.params.id
+    try{
+        const blog= await blogs.findById(id)
+        res.render('blogs/blog_edit',{blog})
+    }
+    catch(error)
+    {
+        req.flash('error',error.message)
+        res.redirect('/blogs')
+    }
+
+})
+
+router.put('/blogs/:id',isloggedin,isauthorised,async (req,res)=>
+{
+    const id =req.params.id
+    
+   try{
+        await blogs.findByIdAndUpdate(id,req.body.data)
+        res.redirect('/blogs')
+   }
+   catch(error)
+   {
+    req.flash('error',error.message)
+        res.redirect('/blogs')
+   }
+})
+
+router.delete('/blogs/:id',isloggedin,isauthorised,async (req,res)=>
+{
+
+    const id =req.params.id
+   try{
+        await blogs.findByIdAndRemove(id)
+        res.redirect('/blogs')
+   }
+   catch(error)
+   {
+    req.flash('error',error.message)
+        res.redirect('/blogs')
+   }
+})
+
 
 module.exports = router

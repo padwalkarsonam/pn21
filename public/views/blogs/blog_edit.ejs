@@ -7,10 +7,10 @@
 <h1></h1>
 
 
-  <form action="/blogs" method="POST">
+  <form action="/blogs/<%=blog._id%>?_method=put" method="POST">
     
     <label for="country">Category</label>
-    <select id="country" name="data[category]">
+    <select id="country" name="data[category]" selected="<%=blog.category%>"> 
       <option value="Stock Advisory">Stock Advisory</option>
       <option value="Loans">Loans</option>
       <option value="Insurance">Insurance</option>
@@ -19,15 +19,15 @@
     </select>
 
     <label for="fname"> Title</label>
-    <input type="text" id="fname" name="data[title]" placeholder="Title of blog" required>
+    <input type="text" id="fname" name="data[title]" placeholder="Title of blog" required value="<%=blog.title%>">
 
     <label for="Image">Image Link</label>
-    <input type="text" id="lname" name="data[image]" placeholder=" eg https://cdn.pixabay.com/photo/2019/07/14/16/29/pen-4337524__340.jpg" required>
+    <input type="text" id="lname" name="data[image]" placeholder=" eg https://cdn.pixabay.com/photo/2019/07/14/16/29/pen-4337524__340.jpg" required value="<%=blog.image%>">
 
     
 
     <label for="subject">Description</label>
-    <textarea id="subject" name="data[description]" placeholder="Write something.." style="height:200px"></textarea>
+    <textarea id="subject" name="data[description]" placeholder="Write something.." style="height:200px"><%-blog.description%></textarea>
 
     <input type="submit" value="Submit">
   </form>

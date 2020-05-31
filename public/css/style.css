@@ -373,7 +373,13 @@ footer .column i+i
    background:rgba(0, 0, 0, 0.815);
    z-index:9999;
    transition: all 1.5sec ease;
+   
 
+}
+
+.sticky .nav-link
+{
+    color: whitesmoke !important;
 }
 
 .sticky .nav-link:hover

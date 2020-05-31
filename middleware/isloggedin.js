@@ -6,6 +6,7 @@ isloggedin = (req,res,next)=>
     {
         return next()
     }
+    req.flash('error','Your need to login')
     res.redirect('/login')
 }
 

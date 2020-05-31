@@ -47,6 +47,9 @@ let ncount = function(selector)
 }
 let a=0;
 $(window).scroll(function(){
+    if($('.numbers')[0])
+    {
+  
     let oTop = $('.numbers').offset().top-window.innerHeight;
 
     
@@ -56,4 +59,6 @@ $(window).scroll(function(){
         a++;
         ncount(".rect>h1")
     }
+          
+}
 })
