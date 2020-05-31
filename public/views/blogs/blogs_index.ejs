@@ -1,0 +1,44 @@
+<%- include("../partials/header.ejs") %>
+</header>
+
+
+<div class="row">
+
+
+<div class="col-md-2">
+<h3>Categories</h3>
+<ul>
+  <li>Loans</li>
+  <li>Stock Advisory</li>
+  <li>Bussiness Planning</li>
+  
+  <li>Digital Marketing</li>
+  <li>Construction</li>
+</ul>
+</div>
+<div class="col-md-10">
+  <div class="row">
+
+    <%blog_all.forEach(function(blog){ %>
+
+    
+    <div class="col-mid-3 col-dm-6">
+      <h4 class="text-center"><%=blog.title%></h4>
+      <div class="img-thumbnail ">
+        <img src="<%=blog.image%>" class="img-thumbnail">
+        <br>
+        <%-blog.description.substring(0,40)%>...
+        <a href="/blogs/<%=blog._id%>" >read more</a>
+      </div>
+    </div>
+    <% }); %>
+
+  </div>
+</div>
+</div>
+
+
+
+</div>
+<h1>Campgrouds page</h1>
+<%- include("../partials/footer.ejs") %>

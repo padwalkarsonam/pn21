@@ -92,6 +92,7 @@ app.use(function(req,res,next)
 //Aquiring of Routes
 const loginRoutes=require('../routes/login')
 const formRoutes = require('../routes/forms')
+const blogsRoutes = require('../routes/blogs')
 
 //============================================|
 
@@ -99,6 +100,7 @@ const formRoutes = require('../routes/forms')
 //Setting up of Routes
 app.use(loginRoutes)
 app.use(formRoutes)
+app.use(blogsRoutes)
 //=============================================|
 
 
