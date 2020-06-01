@@ -36,12 +36,12 @@ router.post('/register',async (req,res)=>
    try{
     
        const user = new Users({username:req.body.username,email:req.body.email})
-      await Users.register(user,req.body.password)
-      console.log('Heroku_my_logs:after register')
+      const us =await Users.register(user,req.body.password)
+     
       passport.authenticate('local')(req,res,function()
-      {  console.log('Heroku_my_logs:before passport')
+      { 
         req.flash('success','User registered successfully')
-        console.log('Heroku_my_logs:after passport')
+        
           res.redirect('/')
       })
    
