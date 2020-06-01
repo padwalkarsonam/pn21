@@ -24,7 +24,7 @@ const methodOverride = require('method-override')
 //============================================
 
 
-PORT = 3000||process.env.PORT;
+PORT = process.env.PORT;
 
 const directorypath = path.join(__dirname,'../public')
 
