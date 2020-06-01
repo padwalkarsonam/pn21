@@ -5,6 +5,8 @@ const app =express()
 const email = require('../Email/nodemail')
 const bodyparser = require('body-parser')
 const mongoose = require('mongoose')
+const compression = require('compression');
+
 
 
 //===================================
@@ -57,6 +59,8 @@ app.use(passport.session())
 
 
 app.use(methodOverride("_method"))
+
+app.use(compression());
 
 //==============================================
 
