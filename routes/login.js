@@ -27,22 +27,24 @@ router.get('/register',(req,res)=>
 
 router.post('/register',async (req,res)=>
 {
-    console.log('Heroku_my_logs:inside register post')
+   
     if(req.body.password!=req.body.RePassword)
     {
         req.flash('error','Password dont match')
        return res.redirect('/register')
     }
    try{
-    console.log('Heroku_my_logs:before user.register')
+    
        const user = new Users({username:req.body.username,email:req.body.email})
       await Users.register(user,req.body.password)
+      console.log('Heroku_my_logs:after register')
       passport.authenticate('local')(req,res,function()
-      {
+      {  console.log('Heroku_my_logs:before passport')
         req.flash('success','User registered successfully')
+        console.log('Heroku_my_logs:after passport')
           res.redirect('/')
       })
-      console.log('Heroku_my_logs:afetr passport')
+   
 
 
    }
