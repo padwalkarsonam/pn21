@@ -20,4 +20,6 @@ const commentShema = mongoose.Schema({
 })
 
 
+
+
 module.exports = mongoose.model('comment',commentShema)

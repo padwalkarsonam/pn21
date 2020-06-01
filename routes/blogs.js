@@ -147,7 +147,8 @@ router.delete('/blogs/:id',isloggedin,isauthorised,async (req,res)=>
 
     const id =req.params.id
    try{
-        await blogs.findByIdAndRemove(id).exec()
+        const blog = await blogs.findById(id)
+        await blog.remove()
         res.redirect('/blogs')
    }
    catch(error)

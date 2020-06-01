@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const comments =require('../models/comments')
 
 
 const blogsSchema = mongoose.Schema({
@@ -48,6 +48,18 @@ const blogsSchema = mongoose.Schema({
             ref:'comment'
         }
     ]
+})
+
+blogsSchema.pre('remove', async function (next) {
+    console.log('inside')
+    const user = this;
+    this.comments.forEach(async function(comment)
+    {
+        console.log(comment._id)
+        await comments.findByIdAndDelete(comment._id)
+    })
+    
+    next()
 })
 
 module.exports =mongoose.model('Blogs',blogsSchema)
