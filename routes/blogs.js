@@ -13,6 +13,14 @@ const methodOverride = require('method-override')
 router.use(methodOverride("_method"))
 router.use(flash())
 
+const bodyparser =require('body-parser')
+
+
+router.use(bodyparser.urlencoded({
+    extended: true
+  }));
+
+
 
 router.get('/blogs',async (req,res)=>
 {
@@ -84,14 +92,17 @@ router.post('/blogs',async (req,res)=>
 router.get('/blogs/:id',async (req,res)=>
 {
     try{
+
         const id =req.params.id
-        const blog= await blogs.findById(id)
+        const blog= await blogs.findById(id).populate('comments').exec()
         category=blog.category
 
         const recent_blog = await blogs.find({}).limit(3).sort({'CreatedAT':-1})
-        
+   
         const related_blog =await blogs.find({category}).limit(2).sort({'CreatedAT':-1})
         res.render('blogs/show_blog',{blog,recent_blog,related_blog})
+        
+  
     }
     catch(error)
     {
@@ -136,7 +147,7 @@ router.delete('/blogs/:id',isloggedin,isauthorised,async (req,res)=>
 
     const id =req.params.id
    try{
-        await blogs.findByIdAndRemove(id)
+        await blogs.findByIdAndRemove(id).exec()
         res.redirect('/blogs')
    }
    catch(error)

@@ -27,7 +27,7 @@ const methodOverride = require('method-override')
 PORT = 3000||process.env.PORT;
 
 const directorypath = path.join(__dirname,'../public')
-console.log(directorypath)
+
 
 
 app.set('view engine','ejs')
@@ -39,7 +39,9 @@ app.set('views', path.join(__dirname, '../public/views'));
 //ALL APP.USE
 app.use(express.static(directorypath))
 
-app.use(bodyparser.urlencoded({extended:true}))
+app.use(bodyparser.urlencoded({
+    extended: true
+  }));
 
 app.use(flash())
 
@@ -93,14 +95,17 @@ app.use(function(req,res,next)
 const loginRoutes=require('../routes/login')
 const formRoutes = require('../routes/forms')
 const blogsRoutes = require('../routes/blogs')
+const commentsRoutes = require('../routes/commets')
 
 //============================================|
 
 //=============================================>
 //Setting up of Routes
+app.use(commentsRoutes)
 app.use(loginRoutes)
 app.use(formRoutes)
 app.use(blogsRoutes)
+
 //=============================================|
 
 

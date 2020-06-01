@@ -3,7 +3,12 @@ const Users = require('../models/user')
 const flash = require('connect-flash')
 const passport = require('passport')
 const router  = express.Router()
+const bodyparser =require('body-parser')
 
+
+router.use(bodyparser.urlencoded({
+    extended: true
+  }));
 
 
 //===========================>
@@ -15,14 +20,14 @@ router.use(flash())
 //SIGN UP
 router.get('/register',(req,res)=>
 {
-    console.log('before this')
+  
     res.render('signup/register')
 })
 
 
 router.post('/register',async (req,res)=>
 {
-    console.log(req.body.username)
+    
     if(req.body.password!=req.body.RePassword)
     {
         req.flash('error','Password dont match')

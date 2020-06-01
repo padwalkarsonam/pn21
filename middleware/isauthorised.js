@@ -5,11 +5,12 @@ const isAuthorised =async (req,res,next)=>
 {
    
     try{
+    
         const blog = await blogs.findById(req.params.id)
     //   console.log(campground)
         if(blog.author.id.equals(req.user._id))
         {
-            console.log('before next')
+           
             next()
         }
         else{

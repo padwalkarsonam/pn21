@@ -1,11 +1,11 @@
 const { GoogleSpreadsheet } = require('google-spreadsheet');
-const doc = new GoogleSpreadsheet('1qp1ELP_Ryz_SUn4xTLRiBDyo1nkPtI8Wb9FNAO0OoEQ');
+const doc = new GoogleSpreadsheet('');
 
 
 const gsheet=async()=>{
 await doc.useServiceAccountAuth({
-    client_email: 'prathambhat1980@gmail.com',
-    private_key: 'bhatpprathamesh1999',
+    client_email: process.env.Gmail,
+    private_key: process.env.GPassword,
   });
  
    

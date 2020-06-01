@@ -14,7 +14,7 @@ $(window).scroll(function()
 {
     let oTop = $('.section-2').offset().top-window.innerHeight;
 
-     console.log($(window).scrollTop()-oTop)
+    
     if($(window).scrollTop()>oTop)
     {
         jQuery('.navbar').addClass('sticky')
@@ -53,7 +53,7 @@ $(window).scroll(function(){
     let oTop = $('.numbers').offset().top-window.innerHeight;
 
     
-     console.log($(window).scrollTop()-oTop)
+    
     if(a==0&&$(window).scrollTop()>=oTop)
     {
         a++;

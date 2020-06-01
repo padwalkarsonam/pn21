@@ -37,7 +37,7 @@ router.post('/info/loans',(req,res)=>
 {
    
     
-    console.log(req.body.data)
+    
     email(req.body.data['Email'],'Loans Details','Respected '+req.body.data['firstname']+'\nwe have noted your queery,Our team will ensure your querries are solved \nPNSV')
     email(process.env.Gmail,'Loans Details new Querry','Firstname:'+req.body.data['firstname']+'\nEmail:'+req.body.data['Email']+'\nNumber:'+req.body.data['number']+'\nSubject:'+req.body.data['subject'])
    res.redirect('/info/loans')
@@ -53,9 +53,9 @@ router.get('/info/BussinessPlanning',(req,res)=>
 
 router.post('/info/BussinessPlanning',(req,res)=>
 {
-    console.log('Gmail:'+process.env.email)
+   
     
-    console.log(req.body.data)
+    
     email(req.body.data['Email'],'Bussiness Planning Details','Respected '+req.body.data['firstname']+'\nwe have noted your queery,Our team will ensure your querries are solved \nPNSV')
     email(process.env.Gmail,'Bussiness Planning new Querry','Firstname:'+req.body.data['firstname']+'\nEmail:'+req.body.data['Email']+'\nNumber:'+req.body.data['number']+'\nSubject:'+req.body.data['subject'])
    res.redirect('/info/BussinessPlanning')
@@ -70,9 +70,7 @@ router.get('/info/Digitalmarketing',(req,res)=>
 
 router.post('/info/Digitalmarketing',(req,res)=>
 {
-    console.log('Gmail:'+process.env.email)
-    
-    console.log(req.body.data)
+   
     email(req.body.data['Email'],'Digital Marketing','Respected '+req.body.data['firstname']+'\nwe have noted your queery,Our team will ensure your querries are solved \nPNSV')
     email(process.env.Gmail,'Digital Marketing new Querry','Firstname:'+req.body.data['firstname']+'\nEmail:'+req.body.data['Email']+'\nNumber:'+req.body.data['number']+'\nSubject:'+req.body.data['subject'])
    res.redirect('/info/Digitalmarketing')
@@ -86,9 +84,7 @@ router.get('/info/Insurance',(req,res)=>
 
 router.post('/info/Insurance',(req,res)=>
 {
-    console.log('Gmail:'+process.env.email)
-    
-    console.log('env:'+process.env.Gmail)
+   
     email(req.body.data['Email'],'Insurance Details','Respected '+req.body.data['firstname']+'\nwe have noted your queery,Our team will ensure your querries are solved \nPNSV')
     email(process.env.Gmail,'Insurance Details new Querry','Firstname:'+req.body.data['firstname']+'\nEmail:'+req.body.data['Email']+'\nNumber:'+req.body.data['number']+'\nSubject:'+req.body.data['subject'])
    res.redirect('/info/Insurance')

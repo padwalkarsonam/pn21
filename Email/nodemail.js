@@ -3,7 +3,7 @@ var nodemailer = require('nodemailer');
 
 const sendMail = (Email,subject,text)=>
 {
-    console.log(Email+'check')
+   
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -24,9 +24,9 @@ var mailOptions = {
 
 transporter.sendMail(mailOptions, function(error, info){
   if (error) {
-    console.log(error);
+    
   } else {
-    console.log('Email sent: ' + info.response);
+    
   }
 });
 }

@@ -9,7 +9,7 @@ const isAuthorised =async (req,res,next)=>
     //   console.log(campground)
         if(comment.author.id.equals(req.user._id))
         {
-            console.log('before next')
+            
             next()
         }
         else{

@@ -21,7 +21,7 @@ $(window).scroll(function(){
     let oTop = $('.numbers').offset().top-window.innerHeight;
 
     
-     console.log($(window).scrollTop()-oTop)
+     
     if(a==0&&$(window).scrollTop()>=oTop)
     {
         a++;
