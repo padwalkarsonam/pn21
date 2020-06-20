@@ -6,8 +6,8 @@ const isAuthorised =async (req,res,next)=>
    
     try{
         const comment = await comments.findById(req.params.comment_id)
-    //   console.log(campground)
-        if(comment.author.id.equals(req.user._id))
+ 
+        if(comment.author.id.equals(req.user._id)||req.user._id.equals(process.env.AdminUser))
         {
             
             next()

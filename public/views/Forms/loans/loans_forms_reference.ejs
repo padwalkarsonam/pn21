@@ -1,0 +1,33 @@
+<%- include("../../partials/header.ejs") %>
+
+</header >
+<link href="/css/Contact-us-forms.css" rel="stylesheet">
+<div class="container">
+<h1>Loans  Reference</h1>
+
+
+  <form action="/info/loans/forms/reference" method="POST">
+    <label for="fname"> Your Name</label>
+    <input type="text" id="fname" name="data[firstname]" placeholder="*Your name.." required>
+
+    
+
+    <label for="Number">Phone number</label>
+    <input type="number" id="number" name="data[number]" placeholder="*eg. 7783123901" required>
+
+    <label for="fname"> Reference Name</label>
+    <input type="text" id="fname" name="data[reference]" placeholder="*Your name.." required>
+
+    <!-- <label for="country">Country</label> -->
+    <!-- <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select> -->
+
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<%- include("../../partials/footer.ejs") %>

@@ -70,7 +70,8 @@
 
 
                 <div class="post-sharing">
-                    <%if(currentuser&& blog.author.id.equals(currentuser._id)){%>
+                   
+                    <%if((currentuser&& currentuser._id.equals(AdminUser))||(currentuser&& blog.author.id.equals(currentuser._id))){%>
                     <ul class="list-inline">
                         <li><a href="/blogs/<%=blog._id%>/edit" class=" btn btn-primary " style="background:  #ff9a00  !important;"> <span class="down-mobile"> Edit </span></a></li>
                        <li>

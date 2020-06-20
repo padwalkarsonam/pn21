@@ -1,0 +1,46 @@
+<%- include("../partials/header.ejs") %>
+<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+
+</header >
+<link href="/css/Contact-us-forms.css" rel="stylesheet">
+<div class="container">
+<h1></h1>
+
+
+  <form action="/dynamic/content" method="POST">
+    
+    <label for="country">Category</label>
+    <select id="country" name="data[category]">
+      <option value="About Nifty">About Nifty</option>
+      <option value="About Global Indices">About Global Indices</option>
+      <option value="Trial Tips">Trial Tips</option>
+      <option value="Home Loans Advertisement">Stock Advertisement</option>
+      <option value="Home Loans Header">Home Loans Header</option>
+      <option value="Home Loans Advertisement">Home Loans Advertisement</option>
+      <option value="Insurance Header">Insurance Header</option>
+      <option value="Insurance Advertisement">Insurance Advertisement</option>
+      <option value="Digital Marketing Header">Digital Marketing Header</option>
+      
+
+    </select>
+
+    <label for="fname"> Title</label>
+    <input type="text" id="fname" name="data[title]" placeholder="Title of blog" required>
+
+    <label for="Image"> Link</label>
+    <input type="text" id="lname" name="data[image]" placeholder=" eg https://cdn.pixabay.com/photo/2019/07/14/16/29/pen-4337524__340.jpg" required>
+
+    
+
+    <label for="subject">Description</label>
+    <textarea id="subject" name="data[description]" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<script>
+    CKEDITOR.replace( 'data[description]' );
+</script>
+
+<%- include("../partials/footer.ejs") %>

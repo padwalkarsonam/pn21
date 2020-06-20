@@ -63,90 +63,6 @@
         </div><!-- end header-logo -->
     </div><!-- end header -->
 
-    <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="masonry-box post-media">
-                <img src="https://cdn.pixabay.com/photo/2016/11/23/14/37/blur-1853262__340.jpg" alt="" class="img-fluid">
-                <div class="hovereffect"></div>
-                <div class="shadoweffect">
-                    <div class="shadow-desc">
-                        <div class="blog-meta">
-                            <span class="bg-aqua"><a href="/blogs?category=Stock Advisory" title="">Stock Advisory</a></span>
-                            <h4><a href="/blogs?category=Stock Advisory" title="">Get best stock avice blogs</a></h4>
-                         
-                            <small><a href="#" title="">by Amanda</a></small>
-                        </div><!-- end meta -->
-                    </div><!-- end shadow-desc -->
-                </div><!-- end shadow -->
-            </div><!-- end post-media -->
-        </div>
-        <div class="col-md-4">
-            <div class="masonry-box post-media">
-                <img src="https://cdn.pixabay.com/photo/2017/08/30/07/56/money-2696228_960_720.jpg" alt="" class="img-fluid">
-                <div class="hovereffect"></div>
-                <div class="shadoweffect">
-                    <div class="shadow-desc">
-                        <div class="blog-meta">
-                            <span class="bg-aqua"><a href="/blogs?category=Loans" title="">Loans</a></span>
-                            <h4><a href="/blogs?category=Loans" title="">Unable to get loans we have solution</a></h4>
-                        
-                        </div><!-- end meta -->
-                    </div><!-- end shadow-desc -->
-                </div><!-- end shadow -->
-            </div><!-- end post-media -->
-        </div>
-        <div class="col-md-4">
-            <div class="masonry-box post-media">
-                <img src="https://cdn.pixabay.com/photo/2017/09/07/08/54/money-2724245__340.jpg" alt="" class="img-fluid">
-                <div class="hovereffect"></div>
-                <div class="shadoweffect">
-                    <div class="shadow-desc">
-                        <div class="blog-meta">
-                            <span class="bg-aqua"><a href="/blogs?category=Insurance" title="">Insurance</a></span>
-                            <h4><a href="/blogs?category=Insurance" title="">Confused over large options of Insurance? Get best Insurance in market </a></h4>
-                         
-                        </div><!-- end meta -->
-                    </div><!-- end shadow-desc -->
-                </div><!-- end shadow -->
-            </div><!-- end post-media -->
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4  ml-auto">
-            <div class="masonry-box post-media">
-                <img src="https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341__340.jpg" alt="" class="img-fluid">
-                <div class="hovereffect"></div>
-                <div class="shadoweffect">
-                    <div class="shadow-desc">
-                        <div class="blog-meta">
-                            <span class="bg-aqua"><a href="/blogs?category=Bussiness Planning" title="">Bussiness Planning</a></span>
-                            <h4><a href="/blogs?category=Bussiness Planning" title="">Plan your Bussiness for best overall growth</a></h4>
-                            
-                        </div><!-- end meta -->
-                    </div><!-- end shadow-desc -->
-                </div><!-- end shadow -->
-            </div><!-- end post-media -->
-        </div>
-        <div class="col-md-4  mr-auto">
-            <div class="masonry-box post-media">
-                <img src="https://cdn.pixabay.com/photo/2016/04/13/22/42/seo-1327870__340.png" alt="" class="img-fluid">
-                <div class="hovereffect"></div>
-                <div class="shadoweffect">
-                    <div class="shadow-desc">
-                        <div class="blog-meta">
-                            <span class="bg-aqua"><a href="/blogs?category=Digital Marketing" title="">Digital Marketing</a></span>
-                            <h4><a href="/blogs?category=Digital Marketing" title="">Be a step ahead of your competitors </a></h4>
-                          
-                        </div><!-- end meta -->
-                    </div><!-- end shadow-desc -->
-                    
-                </div><!-- end shadow -->
-            </div><!-- end post-media -->
-        </div>
-    </div>
-</div>
-
 
 
    
@@ -161,7 +77,9 @@
                         <div class="blog-list clearfix">
 
 
-
+                            <% if(count==0){%>
+                            <h1>No Blogs Yet</h1>
+                            <%}%>
                             <% blog_all.forEach(function(blog){ %> 
                             <div class="blog-box row">
                                 <div class="col-md-4">
@@ -202,12 +120,12 @@
                             <nav aria-label="Page navigation">
                                 <ul class="pagination justify-content-start">
                                     <%for (i = 0; i < count; i++) { %> 
-                                        <%if((i%5)==0){%>
-                                            <li class="page-item"><a class="page-link" href="/blogs?page=<%=Math.round((i/5)+1)%>"><%=Math.round((i/5)+1)%></a></li>
+                                        <%if((i%page_num)==0){%>
+                                            <li class="page-item"><a class="page-link" href="/blogs?page=<%=Math.round((i/page_num)+1)%>"><%=Math.round((i/page_num)+1)%></a></li>
                                     
                                     <%}%>
                                     
-                                    <%if((i/5)>=10){%>
+                                    <%if((i/page_num)>=10){%>
                                     <li class="page-item">
                                         <a class="page-link" href="#">Next</a>
                                     </li>
@@ -275,6 +193,92 @@
         </div><!-- end container -->
     </section>
 
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="masonry-box post-media">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/23/14/37/blur-1853262__340.jpg" alt="" class="img-fluid">
+                    <div class="hovereffect"></div>
+                    <div class="shadoweffect">
+                        <div class="shadow-desc">
+                            <div class="blog-meta">
+                                <span class="bg-aqua"><a href="/blogs?category=Stock Advisory" title="">Stock Advisory</a></span>
+                                <h4><a href="/blogs?category=Stock Advisory" title="">Get best stock avice blogs</a></h4>
+                             
+                                <small><a href="#" title="">by Amanda</a></small>
+                            </div><!-- end meta -->
+                        </div><!-- end shadow-desc -->
+                    </div><!-- end shadow -->
+                </div><!-- end post-media -->
+            </div>
+            <div class="col-md-4">
+                <div class="masonry-box post-media">
+                    <img src="https://cdn.pixabay.com/photo/2017/08/30/07/56/money-2696228_960_720.jpg" alt="" class="img-fluid">
+                    <div class="hovereffect"></div>
+                    <div class="shadoweffect">
+                        <div class="shadow-desc">
+                            <div class="blog-meta">
+                                <span class="bg-aqua"><a href="/blogs?category=Loans" title="">Loans</a></span>
+                                <h4><a href="/blogs?category=Loans" title="">Unable to get loans we have solution</a></h4>
+                            
+                            </div><!-- end meta -->
+                        </div><!-- end shadow-desc -->
+                    </div><!-- end shadow -->
+                </div><!-- end post-media -->
+            </div>
+            <div class="col-md-4">
+                <div class="masonry-box post-media">
+                    <img src="https://cdn.pixabay.com/photo/2017/09/07/08/54/money-2724245__340.jpg" alt="" class="img-fluid">
+                    <div class="hovereffect"></div>
+                    <div class="shadoweffect">
+                        <div class="shadow-desc">
+                            <div class="blog-meta">
+                                <span class="bg-aqua"><a href="/blogs?category=Insurance" title="">Insurance</a></span>
+                                <h4><a href="/blogs?category=Insurance" title="">Confused over large options of Insurance? Get best Insurance in market </a></h4>
+                             
+                            </div><!-- end meta -->
+                        </div><!-- end shadow-desc -->
+                    </div><!-- end shadow -->
+                </div><!-- end post-media -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4  ml-auto">
+                <div class="masonry-box post-media">
+                    <img src="https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341__340.jpg" alt="" class="img-fluid">
+                    <div class="hovereffect"></div>
+                    <div class="shadoweffect">
+                        <div class="shadow-desc">
+                            <div class="blog-meta">
+                                <span class="bg-aqua"><a href="/blogs?category=Bussiness Planning" title="">Bussiness Planning</a></span>
+                                <h4><a href="/blogs?category=Bussiness Planning" title="">Plan your Bussiness for best overall growth</a></h4>
+                                
+                            </div><!-- end meta -->
+                        </div><!-- end shadow-desc -->
+                    </div><!-- end shadow -->
+                </div><!-- end post-media -->
+            </div>
+            <div class="col-md-4  mr-auto">
+                <div class="masonry-box post-media">
+                    <img src="https://cdn.pixabay.com/photo/2016/04/13/22/42/seo-1327870__340.png" alt="" class="img-fluid">
+                    <div class="hovereffect"></div>
+                    <div class="shadoweffect">
+                        <div class="shadow-desc">
+                            <div class="blog-meta">
+                                <span class="bg-aqua"><a href="/blogs?category=Digital Marketing" title="">Digital Marketing</a></span>
+                                <h4><a href="/blogs?category=Digital Marketing" title="">Be a step ahead of your competitors </a></h4>
+                              
+                            </div><!-- end meta -->
+                        </div><!-- end shadow-desc -->
+                        
+                    </div><!-- end shadow -->
+                </div><!-- end post-media -->
+            </div>
+        </div>
+    </div>
+    
+    
     <%- include("../partials/footer.ejs") %>
     <div class="dmtop">Scroll to Top</div>
 

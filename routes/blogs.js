@@ -24,22 +24,25 @@ router.use(bodyparser.urlencoded({
 
 router.get('/blogs',async (req,res)=>
 {
+  
     var page=0
     var blog_all
     if(req.query.page)
     {
-         page=(parseInt(req.query.page)-1)*5
+         page=(parseInt(req.query.page)-1)* parseInt(process.env.page_num)
     }
     if(req.query.category)
     {
+        var count
         category=req.query.category
-        blog_all = await blogs.find({category}).limit(5).sort({'CreatedAT':-1}).skip(page)
-   
+        blog_all = await blogs.find({category}).limit(parseInt(process.env.page_num)).sort({'CreatedAT':-1}).skip(page)
+         count =await blogs.countDocuments({category})
     }
     else{
-         blog_all = await blogs.find().limit(5).sort({'CreatedAT':-1}).skip(page)
+         blog_all = await blogs.find().limit(parseInt(process.env.page_num)).sort({'CreatedAT':-1}).skip(page)
+          count =await blogs.countDocuments()
     }
-    const count =await blogs.countDocuments()
+ 
     
     
     res.render('blogs/blogs-index',{blog_all:blog_all,count})
@@ -47,10 +50,11 @@ router.get('/blogs',async (req,res)=>
 
 router.get('/blogs/new',isloggedin,(req,res)=>
 {
+    
     res.render('blogs/blog_new')
 })
 
-router.post('/blogs',async (req,res)=>
+router.post('/blogs',isloggedin,async (req,res)=>
 {
     
     
@@ -91,6 +95,7 @@ router.post('/blogs',async (req,res)=>
 
 router.get('/blogs/:id',async (req,res)=>
 {
+    
     try{
 
         const id =req.params.id
@@ -114,7 +119,9 @@ router.get('/blogs/:id',async (req,res)=>
 
 router.get('/blogs/:id/edit',isloggedin,isauthorised,async (req,res)=>
 {
+    console.log('here')
     const id =req.params.id
+   
     try{
         const blog= await blogs.findById(id)
         res.render('blogs/blog_edit',{blog})

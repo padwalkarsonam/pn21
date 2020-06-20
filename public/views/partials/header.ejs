@@ -77,8 +77,11 @@
                                <%=currentuser.username %>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/logout">Logout</a>
                                 
+                                <a class="dropdown-item" href="/logout">Logout</a>
+                                <%if((currentuser&& currentuser._id.equals(AdminUser))){ %>
+                                <a class="dropdown-item" href="/dynamic/content">Edit</a>
+                                <%}%>
                             </div>
                         </li>
                     </ul>

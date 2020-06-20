@@ -88,6 +88,8 @@ app.use(function(req,res,next)
     res.locals.currentuser  = req.user
     res.locals.error = req.flash('error')
     res.locals.success = req.flash('success')
+    res.locals.AdminUser = process.env.AdminUser
+    res.locals.page_num =   parseInt(process.env.page_num)
     next()
 })
 
@@ -100,7 +102,8 @@ const loginRoutes=require('../routes/login')
 const formRoutes = require('../routes/forms')
 const blogsRoutes = require('../routes/blogs')
 const commentsRoutes = require('../routes/commets')
-
+const fieldsRoutes = require('../routes/fields')
+const dynamicRoutes = require('../routes/dynamic_content')
 //============================================|
 
 //=============================================>
@@ -109,7 +112,8 @@ app.use(commentsRoutes)
 app.use(loginRoutes)
 app.use(formRoutes)
 app.use(blogsRoutes)
-
+app.use(fieldsRoutes)
+app.use(dynamicRoutes)
 //=============================================|
 
 

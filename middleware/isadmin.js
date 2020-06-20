@@ -1,14 +1,14 @@
 const express = require('express')
 const blogs = require('../models/blogs')
 const flash = require('connect-flash')
-const isAuthorised =async (req,res,next)=>
+const isadmin =async (req,res,next)=>
 {
    
     try{
     
         const blog = await blogs.findById(req.params.id)
     //   console.log(campground)
-        if(blog.author.id.equals(req.user._id)||req.user._id.equals(process.env.AdminUser))
+        if(req.user._id.equals(process.env.AdminUser))
         {
             
           return  next()
@@ -27,4 +27,4 @@ const isAuthorised =async (req,res,next)=>
 
 }
 
-module.exports =isAuthorised
+module.exports =isadmin

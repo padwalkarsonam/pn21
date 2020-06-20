@@ -1,0 +1,154 @@
+
+<%- include("../partials/header.ejs") %>
+</header>
+
+<div class="card">
+    <div class=" team text-center ">
+        <h1>Insurance</h1>
+     
+    </div>
+    <%if(header){%>
+    <div class="page-wrapper">
+                       
+        <div class="blog-list clearfix">
+
+
+
+           
+            <div class="blog-box row">
+              
+                <div class="blog-meta big-meta col-md-12">
+                    <span class="bg-aqua"><a href="" title=""></a></span>
+                    <h4><a href="<%=header.link%>" title=""><%=header.title%></a></h4>
+                    <p><%=header.description%>
+                       </p>
+               
+                    <small><a href="" title=""></a></small>
+                    <small><a href="#" title=""></a></small>
+                </div><!-- end meta -->
+            </div><!-- end blog-box -->
+
+            <hr class="invis">
+           
+           
+
+        </div><!-- end blog-list -->
+        
+    </div><!-- end page-wrapper -->
+    <%}%>
+</div>
+<div class="cards">
+
+    <div class="d-flex flex-row justify-content-center flex-wrap row">
+        <div class="cards col-md-3 col-sm-6">
+
+            <div class="d-flex flex-row justify-content-center flex-wrap">
+        <div class="card">
+            <div class="card-body">
+               
+                <div class="pricing">
+                    
+                    <a class="btn btn-dark px-5 py-2 mb-5 " href="/info/Insurance/forms/lifeinsurance"> <p class="price_text">Life Insurance</p> </a>
+                </div>
+              
+            </div>
+
+        </div>
+    </div>
+</div>
+        <div class="cards col-md-3 col-sm-6">
+            <div class="d-flex flex-row justify-content-center flex-wrap">
+                <div class="card">
+                    <div class="card-body">
+                     
+                        <div class="pricing">
+                           
+                            <a class="btn btn-dark px-5 py-2 mb-5" href="/info/Insurance/forms/general"> <p class="price_text">General Insurance</p></a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="cards col-md-3 col-sm-6">
+            <div class="d-flex flex-row justify-content-center flex-wrap">
+                <div class="card">
+                    <div class="card-body">
+                       
+                        <div class="pricing">
+                           
+                            <a class="btn btn-dark px-5 py-2 mb-5" href="/info/Insurance/forms/medical"> <p class="price_text">Medical Insurance</p></a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="cards col-md-3 col-sm-6">
+            <div class="d-flex flex-row justify-content-center flex-wrap">
+                <div class="card">
+                    <div class="card-body">
+                       
+                        <div class="pricing">
+                           
+                            <a class="btn btn-dark px-5 py-2 mb-5" href="/info/Insurance/forms/reference"> <p class="price_text">Reference Earn</p></a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+       
+
+
+    </div>
+</div>
+<%if(Advertisement){%>
+
+    <div class=" team text-left " style="color: royalblue !important;">
+        <h1><%=Advertisement.title%>/h1>
+    </div>
+    <%}%>
+<div class=" team text-center ">
+    <h1>Our Team</h1>
+<div class=" row">
+    <div class="col-md-4 col-sm-12 text-center">
+        <div class="card">
+            <div class="card-img-top">
+                <img src="../images/human.jpg" class="img-fluid">
+            </div>
+            <h3 class="card-title">Emplotyee1</h3>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, inventore.</p>
+            <a href="#" class="text-secondary text-decoration-none">Links</a>
+        </div>
+        
+    </div>
+    <div class="col-md-4 col-sm-12 text-center">
+        <div class="card">
+            <div class="card-img-top">
+                <img src="../images/human.jpg" class="img-fluid">
+            </div>
+            <h3 class="card-title">Emplotyee1</h3>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, inventore.</p>
+            <a href="#" class="text-secondary text-decoration-none">Links</a>
+        </div>
+        
+    </div>
+    <div class="col-md-4 col-sm-12 text-center">
+        <div class="card">
+            <div class="card-img-top">
+                <img src="../images/human.jpg" class="img-fluid">
+            </div>
+            <h3 class="card-title">Emplotyee1</h3>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, inventore.</p>
+            <a href="#" class="text-secondary text-decoration-none">Links</a>
+        </div>
+        
+    </div>
+</div>
+</div>
+<br>
+<%- include("../partials/footer.ejs") %>
